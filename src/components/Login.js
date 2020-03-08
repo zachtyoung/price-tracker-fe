@@ -19,13 +19,17 @@ function Login(props) {
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
-        axios.post(`http://localhost:4000/users/login`, values)
+        axios.post(`http://localhost:5000/users/login`, values)
         .then(res=>{
-          console.log(res.data.token)
+          
+          localStorage.priceUserName = res.data.name
+          localStorage.priceUserID = res.data.id
           localStorage.priceToken = res.data.token
-          if(localStorage.priceToken){
+          if(localStorage.priceToken && localStorage.priceUserID && localStorage.priceUserName){
           props.history.push('/dashboard')
+          setSubmitting(false)
           } 
+          
         })
       }}
     >
@@ -40,6 +44,7 @@ function Login(props) {
         /* and other goodies */
       }) => (
         <form className="form" onSubmit={handleSubmit}>
+          <h1 className="sign-in-header">Sign In</h1>
           <input
             placeholder="Phone"
             type="phone"
@@ -48,7 +53,7 @@ function Login(props) {
             onBlur={handleBlur}
             value={values.phone}
           />
-          <span>{errors.email && touched.email && errors.email}</span>
+          <span>{errors.phone && touched.phone && errors.phone}</span>
           <input
             placeholder="Password"
             type="password"
@@ -59,7 +64,7 @@ function Login(props) {
           />
           <span>{errors.password && touched.password && errors.password}</span>
           
-          <button type="submit" disabled={isSubmitting}>
+          <button type="submit">
             Login
           </button>
           <Link className='form-link'to='/'>Sign Up</Link>

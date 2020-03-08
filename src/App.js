@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   BrowserRouter as Router,
@@ -9,18 +9,26 @@ import {
 import Login from './components/Login'
 import Register from './components/Register'
 import Dashboard from './components/Dashboard'
-
+import PrivateRoute from './utils/PrivateRoute'
+import {Navbar} from './components/Navbar'
+import {Footer} from './components/Footer'
 import './App.css';
 
+
+
+
 function App() {
+  const [stuff, setStuff] =useState(null)
+  const [numPro, setNumPro] =useState(null)
+  const[isLoggedIn, setIsLoggedIn] =useState(false)
   return (
-   
     <div className="App">
-      <h1>Amazon <h2>Price Tracker</h2></h1>
        <Router>
+       <Navbar thing={stuff} numPro={numPro} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
          <Route exact path='/'component={Register}/>
          <Route path='/login'component={Login}/>
-         <Route path='/dashboard' component={Dashboard}/>
+         <PrivateRoute path='/dashboard' component={()=> <Dashboard setThing={setStuff} setNumPro={setNumPro} setIsLoggedIn={setIsLoggedIn}/>}/>
+       {/* <Footer/> */}
        </Router>
     </div>
 

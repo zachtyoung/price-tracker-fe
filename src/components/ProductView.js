@@ -10,16 +10,16 @@ export const ProductView = (props) => {
     <div className='product-card'>
       <div className='product-card-header'>
       <button className="product-remove" title='Delete Product' onClick={() => {
-        axios.delete(`http://localhost:5000/users/product/${props.products.id}`)
+        axios.delete(`https://react-price-tracker.herokuapp.com/users/product/${props.products.id}`)
         .then(res =>{
-            axios.get(`http://localhost:5000/users/${props.userID}/products`)
+            axios.get(`https://react-price-tracker.herokuapp.com/users/${props.userID}/products`)
             .then(res =>{
               props.setProducts(res.data)
             })
         })
         }}>&#x2715;</button>
         <button className='product-alerts' title='Notifications'onClick={()=> {
-          axios.put(`http://localhost:5000/users/product/${props.products.id}`,{"notifications":!productNotifications})
+          axios.put(`https://react-price-tracker.herokuapp.com/users/product/${props.products.id}`,{"notifications":!productNotifications})
           .then(res =>{
           //  axios.get(`http://localhost:5000/users/${props.products.id}/products`)
           //  .then(res => console.log(res))

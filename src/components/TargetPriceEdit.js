@@ -7,9 +7,9 @@ export const TargetPriceEdit = (props) => {
         <Formik
       initialValues={{ target_price:props.price}}
       onSubmit={(values, { setSubmitting }) => {
-        axios.put(`http://localhost:5000/users/product/${props.productID}`,values)
+        axios.put(`https://react-price-tracker.herokuapp.com/users/product/${props.productID}`,values)
         .then(res => {
-            axios.get(`http://localhost:5000/users/${props.userID}/products`)
+            axios.get(`https://react-price-tracker.herokuapp.com/users/${props.userID}/products`)
             .then(res =>{
                 props.setProducts(res.data)
                 props.setIsEditing(false)

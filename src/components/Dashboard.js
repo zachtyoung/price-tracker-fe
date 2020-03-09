@@ -12,7 +12,7 @@ export default function Dashboard(props) {
 
   useEffect(() => {
     props.setThing(localStorage.getItem('priceUserName'))
-    axios.get(`http://localhost:5000/users/${userID}/products`)
+    axios.get(`https://react-price-tracker.herokuapp.com/users/${userID}/products`)
           .then(res =>{
             setProducts(res.data)
           })
@@ -36,9 +36,9 @@ return(
         return errors;
       }}
       onSubmit={(values, { setSubmitting, resetForm }) => {
-        axios.post(`http://localhost:5000/users/scrapeAndAdd`, values)
+        axios.post(`https://react-price-tracker.herokuapp.com/users/scrapeAndAdd`, values)
         .then(res=>{
-          axios.get(`http://localhost:5000/users/${userID}/products`)
+          axios.get(`https://react-price-tracker.herokuapp.com/users/${userID}/products`)
           .then(res =>{
             console.log(res)
             setProducts(res.data)

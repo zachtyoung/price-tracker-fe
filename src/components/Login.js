@@ -19,7 +19,7 @@ function Login(props) {
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
-        axios.post(`http://localhost:5000/users/login`, values)
+        axios.post(`https://react-price-tracker.herokuapp.com/users/login`, values)
         .then(res=>{
           
           localStorage.priceUserName = res.data.name

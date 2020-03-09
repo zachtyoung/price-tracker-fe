@@ -19,7 +19,7 @@ export const Navbar = (props) => {
         <div className="products">Watchlist: {props.numPro}</div> 
         <div className="nav-user">
             <button className='notify-btn' title='All Notifications' onClick={() => {
-                axios.put(`http://localhost:5000/users/${userID}`,{"all_notifications":!noti})
+                axios.put(`https://react-price-tracker.herokuapp.com/users/${userID}`,{"all_notifications":!noti})
                 .then(res =>{
                     console.log(res)
                     setNoti(!noti)

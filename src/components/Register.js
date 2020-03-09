@@ -32,7 +32,7 @@ function Register(props) {
       }}
       onSubmit={(values, { setSubmitting }) => {
         console.log(values)
-        axios.post(`http://localhost:5000/users/register`, values)
+        axios.post(`https://react-price-tracker.herokuapp.com/users/register`, values)
         .then(res=>{
           console.log(res.data)
           console.log(res.data.token)

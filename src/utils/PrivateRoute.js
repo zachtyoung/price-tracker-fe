@@ -6,12 +6,10 @@ import { Route, Redirect } from 'react-router';
 // 2. It renders a <Route /> and passes all the props through to it.
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={props => {
+  
+  return (<Route {...rest} render={props => {
         if (localStorage.getItem('priceToken')) {
-          return <Component {...props} />;
+          return <Component {...props} {...rest}/>;
         }
         return <Redirect to="/login" />;
       }}

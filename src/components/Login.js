@@ -27,7 +27,6 @@ function Login(props) {
           localStorage.priceToken = res.data.token
           if(localStorage.priceToken && localStorage.priceUserID && localStorage.priceUserName){
           props.history.push('/dashboard')
-          setSubmitting(false)
           } 
           
         })

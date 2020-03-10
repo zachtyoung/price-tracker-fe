@@ -216,8 +216,24 @@ span{
 .Register{
   padding-top: 50px;
 }
+.register-text{
+  text-align: center;
+  color: #707070;
+}
+.register-btn{
+  margin-top: 1em;
+  background-color: #FF9900;
+  color: white;
+  padding: .75em;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
 .form-link{
   text-align: center;
+  text-decoration: none;
+  color: #242F3E;
+  cursor: pointer;
 }
 .sign-in-header{
 padding-bottom: 1em;

@@ -54,6 +54,7 @@ function Register(props) {
         /* and other goodies */
       }) => (
         <form className="form" onSubmit={handleSubmit}>
+          <h1>Register</h1>
             <input
             placeholder="Name"
             type="name"
@@ -91,10 +92,11 @@ function Register(props) {
           />
           {errors.password && touched.password && errors.password}
           
-          <button type="submit" disabled={isSubmitting}>
+          <button type="submit" className="register-btn" disabled={isSubmitting}>
             Register
           </button>
-          <Link className='form-link'to='/login'>Sign In</Link>
+          <span className='register-text'>or</span>
+          <Link className='form-link'to='/login'>Sign in</Link>
         </form>
       )}
     </Formik>

@@ -40,7 +40,6 @@ return(
         .then(res=>{
           axios.get(`https://react-price-tracker.herokuapp.com/users/${userID}/products`)
           .then(res =>{
-            console.log(res)
             setProducts(res.data)
           })
           

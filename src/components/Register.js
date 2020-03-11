@@ -31,11 +31,8 @@ function Register(props) {
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
-        console.log(values)
         axios.post(`https://react-price-tracker.herokuapp.com/users/register`, values)
         .then(res=>{
-          console.log(res.data)
-          console.log(res.data.token)
           localStorage.priceUserName = res.data.name
           localStorage.priceUserID = res.data.id
           localStorage.priceToken = res.data.token

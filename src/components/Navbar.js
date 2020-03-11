@@ -21,10 +21,9 @@ export const Navbar = (props) => {
             <button className='notify-btn' title='All Notifications' onClick={() => {
                 axios.put(`https://react-price-tracker.herokuapp.com/users/${userID}`,{"all_notifications":!noti})
                 .then(res =>{
-                    console.log(res)
                     setNoti(!noti)
                 })
-                }}>{noti?<AlertIcon fill={'#fff'}/>:<NoAlertIcon fill={'#fff'}/>}</button>
+                }}>{noti?<AlertIcon fill={'#FF9900'}/>:<NoAlertIcon fill={'#fff'}/>}</button>
             <div className='user-icon-wrap'><img className="nav-icon" src={account}></img>{props.thing}</div>
             <button className="logout" onClick={()=> {
                 localStorage.removeItem("priceUserID")

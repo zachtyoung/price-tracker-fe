@@ -21,14 +21,15 @@ function App() {
   const [stuff, setStuff] =useState(null)
   const [numPro, setNumPro] =useState(null)
   const[isLoggedIn, setIsLoggedIn] =useState(false)
+  const[loading, setLoading]=useState(false)
   return (
     <div className="App">
        <Router>
        <Navbar thing={stuff} numPro={numPro} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
-         <Route exact path='/'component={Register}/>
-         <Route path='/login'component={Login}/>
+         <Route exact path='/'component={Register} loading={loading} setLoading={loading}/>
+         <Route path='/login'component={Login} loading={loading} setLoading={setLoading}/>
          {/* <PrivateRoute path='/dashboard' component={()=> <Dashboard setThing={setStuff} setNumPro={setNumPro} setIsLoggedIn={setIsLoggedIn}/>}/> */}
-         <PrivateRoute path='/dashboard' component={Dashboard} setThing={setStuff} setNumPro={setNumPro} setIsLoggedIn={setIsLoggedIn}/>
+         <PrivateRoute path='/dashboard' component={Dashboard} setThing={setStuff} setNumPro={setNumPro} setIsLoggedIn={setIsLoggedIn} loading={loading} setLoading={setLoading}/>
 
        {/* <Footer/> */}
        </Router>

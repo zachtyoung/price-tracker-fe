@@ -25,7 +25,7 @@ export const ProductView = (props) => {
           //  .then(res => console.log(res))
             setProductNotifications(!productNotifications)})
           
-          }}>{productNotifications? <AlertIcon fill={'#bdbdbd'}/>:<NoAlertIcon fill={'#bdbdbd'}/>}</button>
+          }}>{productNotifications? <AlertIcon fill={'#FF9900'}/>:<NoAlertIcon fill={'#bdbdbd'}/>}</button>
         
         </div>
     <img className='product-img' src={props.products.img_url} alt={'product'}></img>

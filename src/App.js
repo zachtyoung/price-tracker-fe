@@ -22,17 +22,19 @@ function App() {
   const [numPro, setNumPro] =useState(null)
   const[isLoggedIn, setIsLoggedIn] =useState(false)
   const[loading, setLoading]=useState(false)
+  const [products, setProducts] = useState(null)
   return (
     <div className="App">
        <Router>
-       <Navbar thing={stuff} numPro={numPro} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+       <Navbar thing={stuff} numPro={numPro} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} products={products} setProducts={setProducts}/>
          <Route exact path='/'component={Register} loading={loading} setLoading={loading}/>
          <Route path='/login'component={Login} loading={loading} setLoading={setLoading}/>
          {/* <PrivateRoute path='/dashboard' component={()=> <Dashboard setThing={setStuff} setNumPro={setNumPro} setIsLoggedIn={setIsLoggedIn}/>}/> */}
-         <PrivateRoute path='/dashboard' component={Dashboard} setThing={setStuff} setNumPro={setNumPro} setIsLoggedIn={setIsLoggedIn} loading={loading} setLoading={setLoading}/>
+         <PrivateRoute path='/dashboard' component={Dashboard} setThing={setStuff} setNumPro={setNumPro} setIsLoggedIn={setIsLoggedIn} loading={loading} setLoading={setLoading} products={products} setProducts={setProducts}/>
 
-       {/* <Footer/> */}
+        <Footer/>
        </Router>
+       
     </div>
 
   );

@@ -42,7 +42,7 @@ function Login(props) {
         isSubmitting,
         /* and other goodies */
       }) => (
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form landing-form" onSubmit={handleSubmit}>
           <h1 className="sign-in-header">Sign In</h1>
           <input
             placeholder="Phone"

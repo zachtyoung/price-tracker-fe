@@ -3,22 +3,23 @@ import { Formik } from 'formik';
 import add from '../assets/add.svg'
 import axios from 'axios';
 
+
 import {ProductView} from './ProductView'
 
 
-export default function Dashboard(props) {
-  const [products, setProducts] = useState(null)
+export default function Dashboard(props ) {
+
   const userID = localStorage.getItem("priceUserID")
 
   useEffect(() => {
     props.setThing(localStorage.getItem('priceUserName'))
     axios.get(`https://react-price-tracker.herokuapp.com/users/${userID}/products`)
           .then(res =>{
-            setProducts(res.data)
+            props.setProducts(res.data)
           })
   },[])
-  if(products){
-    props.setNumPro(products.length)
+  if(props.products){
+    props.setNumPro(props.products.length)
   }
   if(localStorage.getItem("priceToken")){
     props.setIsLoggedIn(true)
@@ -26,7 +27,7 @@ export default function Dashboard(props) {
 return(
     <div className="register">
         
-    <Formik
+    {/* <Formik
       initialValues={{ user_id: userID, url: '', target_price:'' }}
       validate={values => {
         const errors = {};
@@ -40,7 +41,8 @@ return(
         .then(res=>{
           axios.get(`https://react-price-tracker.herokuapp.com/users/${userID}/products`)
           .then(res =>{
-            setProducts(res.data)
+            console.log(res.data)
+            props.setProducts(res.data)
           })
           
 
@@ -56,7 +58,6 @@ return(
         handleBlur,
         handleSubmit,
         isSubmitting,
-        /* and other goodies */
       }) => (
         <form className="form" onSubmit={handleSubmit}>
           <h1>Add a new product</h1>
@@ -86,10 +87,10 @@ return(
           </div>
         </form>
       )}
-    </Formik>
+    </Formik> */}
     <div className='product-wrap'>
-    {products ? products.map((el) => 
-    <ProductView key={el.id} products={el} setProducts={setProducts} userID={userID}/>
+    {props.products ? props.products.map((el) => 
+    <ProductView key={el.id} products={el} setProducts={props.setProducts} userID={userID}/>
     ): ""}
     </div>
   </div>

@@ -50,7 +50,7 @@ function Register(props) {
         isSubmitting,
         /* and other goodies */
       }) => (
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form landing-form" onSubmit={handleSubmit}>
           <h1>Register</h1>
             <input
             placeholder="Name"

@@ -1,6 +1,8 @@
+@import '~antd/dist/antd.css';
 *{
   margin:0;
   padding:0;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 button{
   background: none;
@@ -15,16 +17,22 @@ button:focus {outline:0;}
 .nav-wrap{
   text-align: left;
   background-color: #242F3E;
-  padding: 1em;
+  padding: .5em 1em;
   display: grid;
   grid-template-columns: max-content 1fr;
   align-items: center;
   position: relative;
 }
 .notify-btn{
-  display: block;
-  padding-top: 2px;
-  margin-right: 8px;
+  margin-left: 5px;
+  display: inline-block;
+}
+.alert-dropdown{
+  vertical-align: middle;
+}
+.notify-btn-text{
+  display: inline-block;
+  margin-right: 7px;
 }
 .notifications{
   display: block;
@@ -35,23 +43,32 @@ button:focus {outline:0;}
   display: inline-block;
   font-size: 30px;
   color: white;
+  margin: 0;
 }
-.nav-wrap p{
+/* .nav-wrap p{
   font-weight: 300;
   display: inline-block;
   font-size: 30px;
   color: white;
-}
+  margin: 0;
+} */
 
 .form{
   display: flex;
   flex-direction: column;
-  max-width: max-content;
-  margin: 1em auto;
-  box-shadow: 0px 9px 37px -19px rgba(0,0,0,0.66);
-  padding: 2em;
+  width: 100%;
+  /* margin: 1em auto; */
+  /* box-shadow: 0px 9px 37px -19px rgba(0,0,0,0.66); */
+   /* padding: 2em;  */
   background-color: white;
   border-radius: 5px;
+}
+.landing-form{
+width: 33%;
+box-shadow: 0px 9px 37px -19px rgba(0,0,0,0.66);
+padding: 2em;
+margin: 0 auto;
+max-width: 500px;
 }
 .form h1{
   color:#242F3E;
@@ -59,38 +76,30 @@ button:focus {outline:0;}
   font-weight: 500;
   font-size: 36px;
 }
-.form-flex-wrap{
-  margin-top: 1em;
-  display: grid;
-  grid-column: 1fr 1fr;
-}
 input{
-  grid-column: 1;
+  width: 100%;
   font-size: 24px;
   font-weight: 400;
   border: none;
   background-color: #f8f9fa; 
   display: block;
   padding: 5px 10px 5px 10px;
-  margin: 5px;
+  margin-top: 10px;
   border-radius: 5px;
 }
 .add-btn{
-  grid-column: 2;
-  font-size: 20px;
   border: none;
-  border-radius: 5px;
   color: white;
   font-weight: 600;
   display: block;
-  margin-left: 10px;
+  margin-right: 10px;
 }
 .add-img{
-  height: 40px;
-  vertical-align: middle;
+  height: 28px;
+display: block;
 
 }
-span{
+.errors-url{
   padding-bottom: 5px;
   color: rgba(255, 0, 0, 0.61);
   text-align: left;
@@ -173,7 +182,7 @@ span{
 }
 .nav-user{
   display: grid;
-  grid-template-columns: max-content max-content max-content;
+  grid-template-columns: max-content max-content max-content max-content;
   grid-template-rows: 1fr;
   color: white;
   margin-left: auto;
@@ -278,6 +287,9 @@ margin: 10px auto 0 auto;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
   }
+  .landing-form{
+    width: 50%;
+  }
 }
 @media only screen and (max-width: 680px) {
   .product-wrap{
@@ -287,4 +299,54 @@ margin: 10px auto 0 auto;
   .products{
     display: none;
   }
+  .landing-form{
+    width: 95%;
+    margin: 0 auto;
+    box-shadow: none;
+  }
 }
+.testing{
+  margin-top: 10px;
+}
+.pro-name:hover{
+  background-color: #fff;
+  cursor: default;
+}
+.add-product-btn{
+  background-color: #FF9900;
+  border: #FF9900;
+}
+.add-product-btn:hover{
+  background-color: #FFAD33;
+}
+.modal-title{
+  padding-top: 10px;
+  text-align: center;
+}
+.foot-wrap{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-left: 5px;
+  background-color: #242F3E;
+}
+.foot-wrap p{
+  padding: 3px;
+  margin: 0;
+  color: darkgray;
+  font-size: 10px;
+  text-align: center;
+}
+.logo{
+  display: inline-block;
+  width: 120px;
+}
+.logo-text{
+  font-weight: 600;
+  font-size: 20px;
+  display: inline-block;
+  font-size: 30px;
+  color: white;
+  margin: 0;
+}
+

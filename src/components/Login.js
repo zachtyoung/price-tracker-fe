@@ -1,9 +1,10 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Formik } from 'formik';
 import {Link }from "react-router-dom";
 import axios from 'axios';
-
+import { Button } from 'antd';
 function Login(props) {
+  const[loading,setLoading]=useState(false)
     return(
   <div className="Register">
     <Formik
@@ -19,6 +20,7 @@ function Login(props) {
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
+        setLoading(true)
         axios.post(`https://react-price-tracker.herokuapp.com/users/login`, values)
         .then(res=>{
           
@@ -26,6 +28,7 @@ function Login(props) {
           localStorage.priceUserID = res.data.id
           localStorage.priceToken = res.data.token
           if(localStorage.priceToken && localStorage.priceUserID && localStorage.priceUserName){
+            setLoading(false)
           props.history.push('/dashboard')
           } 
           
@@ -63,9 +66,8 @@ function Login(props) {
           />
           <span>{errors.password && touched.password && errors.password}</span>
           
-          <button type="submit" className='register-btn'>
-            Login
-          </button>
+          <Button htmlType='submit' className='register-btn' loading={loading}>  Login</Button>
+      
           <span className='register-text'>or</span>
           <Link className='form-link'to='/'>Sign Up</Link>
         </form>

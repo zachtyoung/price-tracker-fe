@@ -233,10 +233,21 @@ display: block;
   margin-top: 1em;
   background-color: #FF9900;
   color: white;
+  height: auto;
   padding: .75em;
   border-radius: 5px;
   font-size: 16px;
   font-weight: 600;
+  border: none;
+}
+.register-btn:hover{
+  border: none;
+  color: white;
+  background-color: #FFAD33;
+}
+.register-btn:focus{
+  color: white;
+  background-color: #FFAD33;
 }
 .form-link{
   text-align: center;
@@ -317,6 +328,9 @@ margin: 10px auto 0 auto;
   border: #FF9900;
 }
 .add-product-btn:hover{
+  background-color: #FFAD33;
+}
+.add-product-btn:focus{
   background-color: #FFAD33;
 }
 .modal-title{

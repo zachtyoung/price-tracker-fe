@@ -53,10 +53,6 @@ export const Navbar = (props) => {
           visible: true,
         });
       };
-    //   const hey = () =>{
-    //     setConfirmLoading(false)
-    //     setVisible(false)
-    // }
       const handleOk = () => {
         setLoading(true)
         if (formRef.current) {
@@ -79,7 +75,7 @@ export const Navbar = (props) => {
             <Button key="back" onClick={handleCancel}>
               Cancel
             </Button>,
-            <Button className='add-product-btn'key="submit" type="primary" loading={loading} onClick={handleOk}>
+            <Button className='add-product-btn' key="submit" type="primary" loading={loading} onClick={handleOk}>
               Add
             </Button>,
           ]}
@@ -170,14 +166,7 @@ export const Navbar = (props) => {
         <Avatar size="small" icon={<UserOutlined />} />
         </a>
       </Dropdown></div>
-            {/* <button className="logout" onClick={()=> {
-                localStorage.removeItem("priceUserID")
-                localStorage.removeItem("priceUserName")
-                localStorage.removeItem("priceToken")
-                props.setIsLoggedIn(false)
-                history.push("/login");
-                
-        }}>Logout</button> */}
+           
         </div>
         </>
         : null}

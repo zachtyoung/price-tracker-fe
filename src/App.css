@@ -16,7 +16,7 @@ button:focus {outline:0;}
 }
 .nav-wrap{
   text-align: left;
-  background-color: #242F3E;
+  background-color: #131A21;
   padding: .5em 1em;
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -64,11 +64,16 @@ button:focus {outline:0;}
   border-radius: 5px;
 }
 .landing-form{
-width: 33%;
-box-shadow: 0px 9px 37px -19px rgba(0,0,0,0.66);
+width: 100%;
+/* box-shadow: 0px 9px 37px -19px rgba(0,0,0,0.66); */
 padding: 2em;
 margin: 0 auto;
 max-width: 500px;
+}
+.auth-img{
+  width: 80%;
+  display: block;
+  margin: 0 auto;
 }
 .form h1{
   color:#242F3E;
@@ -85,7 +90,7 @@ input{
   display: block;
   padding: 5px 10px 5px 10px;
   margin-top: 10px;
-  border-radius: 5px;
+  border-radius: 99px;
 }
 .add-btn{
   border: none;
@@ -223,22 +228,27 @@ display: block;
 }
 
 .Register{
-  padding-top: 50px;
+  display: grid;
+  grid-template-columns: 33% 66%;
+  padding-top: 150px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 .register-text{
   text-align: center;
   color: #707070;
 }
 .register-btn{
-  margin-top: 1em;
   background-color: #FF9900;
   color: white;
   height: auto;
-  padding: .75em;
-  border-radius: 5px;
+  padding: .75em 3em;
+  border-radius: 99px;
   font-size: 16px;
   font-weight: 600;
   border: none;
+  width: max-content;
+  margin: 1em auto 0 auto;
 }
 .register-btn:hover{
   border: none;
@@ -256,7 +266,6 @@ display: block;
   cursor: pointer;
 }
 .sign-in-header{
-padding-bottom: 1em;
 text-align: center;
 }
 .price-edit-btn{
@@ -299,7 +308,15 @@ margin: 10px auto 0 auto;
     grid-template-rows: auto;
   }
   .landing-form{
-    width: 50%;
+    width: 100%;
+  }
+  .Register{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 50px;
+  }
+  .auth-img{
+    width: 33%;
   }
 }
 @media only screen and (max-width: 680px) {
@@ -363,4 +380,17 @@ margin: 10px auto 0 auto;
   color: white;
   margin: 0;
 }
-
+.landing{
+  min-height: 100vh;
+  background: rgb(19,26,33);
+  background: linear-gradient(180deg, rgba(19,26,33,1) 21%, rgba(58,75,90,1) 100%);
+}
+.landing-wrap{
+  display: grid;
+  grid-template-columns: max-content max-content;
+}
+.form-errors{
+  text-indent: 8px;
+  color: red;
+  font-size: 12px;
+}

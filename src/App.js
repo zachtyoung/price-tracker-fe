@@ -4,7 +4,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 import Login from './components/Login'
 import Register from './components/Register'
@@ -12,6 +13,7 @@ import Dashboard from './components/Dashboard'
 import PrivateRoute from './utils/PrivateRoute'
 import {Navbar} from './components/Navbar'
 import {Footer} from './components/Footer'
+import Landing from './components/Landing'
 import './App.css';
 
 
@@ -26,12 +28,13 @@ function App() {
   return (
     <div className="App">
        <Router>
-       <Navbar thing={stuff} numPro={numPro} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} products={products} setProducts={setProducts}/>
-         <Route exact path='/'component={Register} loading={loading} setLoading={loading}/>
+         {console.log(window.location)}
+       {window.location.pathname == '/'?null:<Navbar thing={stuff} numPro={numPro} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} products={products} setProducts={setProducts}/>}
+         <Route exact path='/' component={Landing}></Route>
+         <Route path='/register'component={Register} loading={loading} setLoading={loading}/>
          <Route path='/login'component={Login} loading={loading} setLoading={setLoading}/>
          {/* <PrivateRoute path='/dashboard' component={()=> <Dashboard setThing={setStuff} setNumPro={setNumPro} setIsLoggedIn={setIsLoggedIn}/>}/> */}
          <PrivateRoute path='/dashboard' component={Dashboard} setThing={setStuff} setNumPro={setNumPro} setIsLoggedIn={setIsLoggedIn} loading={loading} setLoading={setLoading} products={products} setProducts={setProducts}/>
-
         <Footer/>
        </Router>
        

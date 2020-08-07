@@ -1,15 +1,18 @@
 import React from 'react'
+import the from '../assets/the.svg'
+import amazon from '../assets/amazon-i.svg'
+import pricetracker from '../assets/pricetracker.svg'
+import revenue from '../assets/rev.svg'
 
 export default function Landing() {
     return (
         <div className='landing'>
-            <nav>Price Tracker</nav>
             <div className='landing-wrap'>
                 <div className='landing-left'>
                     <div className='left-top'>
-                    <h1>The</h1>
-                    <h1>Amazon</h1>
-                    <h1>PriceTracker</h1>
+                        <img className='img-1'src={the}></img>
+                        <img className='img-2'src={amazon}></img>
+                        <img className='img-3'src={pricetracker}></img>
                     </div>
                     <div className='left-bottom'>
                         <h1>The products you love</h1>
@@ -18,7 +21,7 @@ export default function Landing() {
                     </div>
                 </div>
                 <div className='landing-right'>
-                    <h1>Image</h1>
+                    <img className='landing-img' src={revenue}></img>
                 </div>
             </div>
         </div>

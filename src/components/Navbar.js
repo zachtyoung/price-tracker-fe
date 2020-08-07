@@ -8,7 +8,8 @@ import { Modal, Button, Avatar, Menu, Dropdown} from 'antd';
 import { Formik } from 'formik';
 import add from '../assets/add.svg'
 import { UserOutlined, DownOutlined } from '@ant-design/icons';
-import logo from '../assets/amazon.svg'
+import logo from '../assets/ptracker-logo.svg'
+import {Link }from "react-router-dom";
 
 export const Navbar = (props) => {
     const userID = localStorage.getItem("priceUserID")
@@ -40,7 +41,7 @@ export const Navbar = (props) => {
                 localStorage.removeItem("priceUserName")
                 localStorage.removeItem("priceToken")
                 props.setIsLoggedIn(false)
-                history.push("/login");
+                history.push("/");
                 
         }}>Logout</Menu.Item>
       </Menu>
@@ -144,15 +145,12 @@ export const Navbar = (props) => {
       )}
     </Formik>
         </Modal>
-        <div><img className="logo"src={logo}></img><p className="logo-text">Price Tracker</p></div>
+        <div><img className="logo"src={logo}></img></div>
         
         {props.isLoggedIn? 
         <>
         <div className="products">Watchlist: {props.numPro}</div> 
         <div className="nav-user">
-        {/* <Button className='nav-add-btn' onClick={showModal}>
-          ADD
-        </Button> */}
         <button className='add-btn' onClick={showModal}>
             <img className="add-img" src={add}></img>
           </button>
@@ -169,7 +167,7 @@ export const Navbar = (props) => {
            
         </div>
         </>
-        : null}
+        : <Link to='/login'className='nav-sign-in'>sign in</Link>}
         
        
 

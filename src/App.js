@@ -29,7 +29,7 @@ function App() {
     <div className="App">
        <Router>
          {console.log(window.location)}
-       {window.location.pathname == '/'?null:<Navbar thing={stuff} numPro={numPro} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} products={products} setProducts={setProducts}/>}
+       <Navbar thing={stuff} numPro={numPro} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} products={products} setProducts={setProducts}/>
          <Route exact path='/' component={Landing}></Route>
          <Route path='/register'component={Register} loading={loading} setLoading={loading}/>
          <Route path='/login'component={Login} loading={loading} setLoading={setLoading}/>

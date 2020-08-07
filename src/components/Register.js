@@ -3,11 +3,13 @@ import { Formik } from 'formik';
 import {Link }from "react-router-dom";
 import axios from 'axios';
 import { Button } from 'antd';
+import selfie from '../assets/selfie.svg'
 
 function Register(props) {
   const[loading,setLoading]=useState(false)
     return(
   <div className="Register">
+    <img className='auth-img' src={selfie}></img>
     <Formik
       initialValues={{ name:'', email: '', phone:'', password: '' }}
       validate={values => {
@@ -56,6 +58,7 @@ function Register(props) {
       }) => (
         <form className="form landing-form" onSubmit={handleSubmit}>
           <h1>Register</h1>
+          <span className='form-errors'>{errors.name && touched.name && errors.name}</span>
             <input
             placeholder="Name"
             type="name"
@@ -64,7 +67,7 @@ function Register(props) {
             onBlur={handleBlur}
             value={values.name}
           />
-          {errors.name && touched.name && errors.name}
+         <span className='form-errors'>{errors.email && touched.email && errors.email}</span>
           <input
             placeholder="Email"
             type="email"
@@ -73,7 +76,7 @@ function Register(props) {
             onBlur={handleBlur}
             value={values.email}
           />
-          {errors.email && touched.email && errors.email}
+           <span className='form-errors'>{errors.phone && touched.phone && errors.phone}</span>
           <input
             placeholder="Phone"
             type="phone"
@@ -82,7 +85,7 @@ function Register(props) {
             onBlur={handleBlur}
             value={values.phone}
           />
-          {errors.phone && touched.phone && errors.phone}
+         <span className='form-errors'>{errors.password && touched.password && errors.password}</span>
           <input
             placeholder="Password"
             type="password"
@@ -91,7 +94,7 @@ function Register(props) {
             onBlur={handleBlur}
             value={values.password}
           />
-          {errors.password && touched.password && errors.password}
+          
           
           <Button htmlType='submit' className='register-btn' loading={loading}>Register</Button>
           <span className='register-text'>or</span>

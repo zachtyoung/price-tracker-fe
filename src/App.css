@@ -319,6 +319,12 @@ margin: 10px auto 0 auto;
     width: 33%;
   }
 }
+@media only screen and (max-width: 800px) {
+  .left-top{
+    grid-template-columns: 1fr;
+  }
+
+}
 @media only screen and (max-width: 680px) {
   .product-wrap{
     grid-template-columns: 1fr;
@@ -424,7 +430,7 @@ margin: 10px auto 0 auto;
   font-size: 36px;
   line-height: 48px;
 }
-.left-bottom button{
+.landing-btn{
   margin-top: 50px;
   color: white;
   background-color: #FF9900;
@@ -432,7 +438,14 @@ margin: 10px auto 0 auto;
   border-radius: 99px;
   font-size: 20px;
   font-weight: 500;
+}
 
+.landing-img:hover{
+  transform: scale(1.1);
+}
+.landing-btn:focus{
+  transform: scale(1.1);
+  color: white;
 }
 .form-errors{
   text-indent: 8px;
@@ -463,4 +476,52 @@ width: 100%;
   grid-row: 3;
 margin-top: -10px;
 width: 100%;
+}
+@media only screen and (max-width: 800px) {
+ .left-top{
+   margin-top: 30px;
+   grid-template-columns: 1fr;
+ }
+ .img-1{
+  margin: 0 auto 25px auto;
+   max-width: 20%;
+   grid-column: 1;
+ }
+ .img-2{
+  margin: 0 auto 10px auto;
+  grid-column: 1;
+  max-width: 50%;
+
+ }
+ .img-3{
+  margin: 0 auto 25px auto;
+  grid-column: 1;
+max-width: 66%;
+ }
+ .landing-left{
+   max-width: none;
+ }
+ .landing-img{
+   display: none;
+ }
+ .landing{
+   min-height: 96.5vh;
+   padding: 50px 25px 25px 25px
+ }
+ .left-bottom{
+  margin-top: 25px;
+}
+ .left-bottom h1{
+   text-align: center;
+  font-size: 24px;
+
+  line-height: 33px;
+ }
+ .landing-btn{
+   display: block;
+   max-width: max-content;
+   margin: 75px auto;
+   padding: .55rem 1.5rem;
+ }
+
 }

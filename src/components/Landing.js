@@ -3,6 +3,7 @@ import the from '../assets/the.svg'
 import amazon from '../assets/amazon-i.svg'
 import pricetracker from '../assets/pricetracker.svg'
 import revenue from '../assets/rev.svg'
+import {Link }from "react-router-dom";
 
 export default function Landing() {
     return (
@@ -17,7 +18,7 @@ export default function Landing() {
                     <div className='left-bottom'>
                         <h1>The products you love</h1>
                         <h1>At the prices you want</h1>
-                        <button>Learn More</button>
+                        <Link to='/login'><button className='landing-btn'>Get Started</button></Link>
                     </div>
                 </div>
                 <div className='landing-right'>

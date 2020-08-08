@@ -145,7 +145,7 @@ export const Navbar = (props) => {
       )}
     </Formik>
         </Modal>
-        <div><img className="logo"src={logo}></img></div>
+        <div><Link to='/'><img className="logo"src={logo}></img></Link></div>
         
         {props.isLoggedIn? 
         <>
